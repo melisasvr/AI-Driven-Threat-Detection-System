@@ -1,59 +1,105 @@
 # AI-Driven Threat Detection System
-This project is an AI-driven threat detection system designed to analyze network traffic and identify potential anomalies. It uses a machine learning model (Isolation Forest) to detect suspicious activities within a network by distinguishing between normal and abnormal traffic patterns.
 
-## Project Structure
-- ai_threat_detection.py: The main script that trains and tests the anomaly detection model using synthetic network traffic data.
-- generate_synthetic_network_data.py: Script to generate synthetic network traffic data for training and testing the model.
-- generate_synthetic_traffic.py: Script to generate synthetic network packets and save them in a .pcap file (Packet Capture).
-
-## Prerequisites
-- Python 3.x
-- Required Python libraries:
-- numpy
-- pandas
-- scikit-learn
-- scapy
-You can install the required libraries using pip: `pip install numpy pandas scikit-learn scapy`
-`pip install scapy`
-
-## How to Run the Project
-1. Generate Synthetic Network Traffic Data:
-- Run the `generate_synthetic_network_data.py` script to create synthetic network traffic data.
-- This will generate a CSV file (synthetic_network_data.csv) containing both normal and abnormal traffic data.
-- `python generate_synthetic_network_data.py`
-2. Train and Test the Model:
-- Run the `ai_threat_detection.py` script to train the Isolation Forest model on the synthetic data and evaluate its performance.
-- The script will output the training and testing accuracy along with a classification report.
-- `python ai_threat_detection.py`
-3. Generate Synthetic Network Packets:
-- Run the `generate_synthetic_traffic.py` script to create synthetic network packets and save them in a `.pcap` file.
-- This file can be used for further analysis or as input to network monitoring tools.
-- `python generate_synthetic_traffic.py`
+An AI-driven threat detection system that analyzes network traffic and identifies potential anomalies using machine learning. The project uses an Isolation Forest model to distinguish between normal and abnormal traffic patterns.
 
 ## Project Overview
-`ai_threat_detection.py`
-- Purpose: Trains an Isolation Forest model to detect anomalies in network traffic.
-- Key Steps:
-1. Generates synthetic normal and abnormal network traffic data.
-2. Splits the data into training and testing sets.
-3. Trains the model on the training data.
-4. Evaluates the model using the testing data.
-5. Outputs accuracy and classification metrics.
-`generate_synthetic_network_data.py`
-- Purpose: Generates synthetic network traffic data, combining normal and abnormal patterns, and saves it as a CSV file.
-`generate_synthetic_traffic.py`
-- Purpose: Creates synthetic network packets using random IP addresses and TCP ports, saving them as a `.pcap` file for analysis.
+
+This project demonstrates how machine learning can be applied to network security by generating synthetic traffic data, training an anomaly detection model, and evaluating suspicious activity within network patterns.
+
+## Features
+
+- Generates synthetic network traffic data for training and testing.
+- Trains an Isolation Forest model for anomaly detection.
+- Evaluates model performance using test data.
+- Generates synthetic network packets and saves them as a `.pcap` file.
+- Serves as a foundation for more advanced threat detection systems.
+
+## Project Structure
+
+- `ai_threat_detection.py`: Main script that trains and tests the anomaly detection model using synthetic network traffic data.
+- `generate_synthetic_network_data.py`: Generates synthetic network traffic data for training and testing.
+- `generate_synthetic_traffic.py`: Generates synthetic network packets and saves them in `.pcap` format.
+
+## Prerequisites
+
+- Python 3.x
+- Required Python libraries:
+  - `numpy`
+  - `pandas`
+  - `scikit-learn`
+  - `scapy`
+
+## Installation
+- Install the required dependencies using pip:
+
+```bash
+pip install numpy pandas scikit-learn scapy
+```
 
 ## Usage
-This project can be a starting point for developing more advanced network security systems. It demonstrates how machine learning models can be applied to network traffic data to detect potential threats in real-time.
+
+### 1. Generate Synthetic Network Data
+
+Run the following command to create the synthetic dataset:
+
+```bash
+python generate_synthetic_network_data.py
+```
+
+This will generate a CSV file named `synthetic_network_data.csv` containing both normal and abnormal traffic data.
+
+### 2. Train and Test the Model
+
+Train the Isolation Forest model and evaluate its performance:
+
+```bash
+python ai_threat_detection.py
+```
+
+- The script will output training and testing results, along with a classification report.
+
+### 3. Generate Synthetic Network Packets
+
+- Create synthetic network packets and save them as a `.pcap` file:
+
+```bash
+python generate_synthetic_traffic.py
+```
+
+- The generated `.pcap` file can be used for further analysis or for testing network monitoring tools.
+
+## How It Works
+
+### `ai_threat_detection.py`
+- Generates synthetic normal and abnormal network traffic data.
+- Splits the dataset into training and testing sets.
+- Trains the Isolation Forest model on the training data.
+- Evaluates the model on test data.
+- Outputs performance metrics and classification results.
+
+### `generate_synthetic_network_data.py`
+- Creates synthetic network traffic data with both normal and abnormal patterns.
+- Saves the generated data as a CSV file.
+
+### `generate_synthetic_traffic.py`
+- Generates synthetic network packets using random IP addresses and TCP ports.
+- Saves the packets as a `.pcap` file for analysis.
 
 ## Potential Enhancements
-To elevate the project to an intermediate level:
-- Integrate real network traffic data for more realistic testing.
-- Implement additional machine learning models and compare their performance.
-- Include feature engineering techniques to extract more meaningful features from the network data.
-- Build a real-time detection system that monitors live network traffic.
-- Add a GUI to visualize the detection results.
+
+- To make the project more robust and production-ready, consider the following improvements:
+
+- Integrate real network traffic data for more realistic evaluation.
+- Compare multiple machine learning models.
+- Add feature engineering to improve detection quality.
+- Build a real-time monitoring pipeline for live traffic analysis.
+- Develop a GUI to visualize detection results.
 
 ## Author
-Melisa Sever
+
+**Melisa Sever**
+
+- Project repository: [AI-Driven Threat Detection System](https://github.com/melisasvr/AI-Driven-Threat-Detection-System)
+
+## Collaboration
+- This project was originally started by Melisa Sever and later developed in collaboration with Saarthak Tripathi.
